@@ -1,6 +1,6 @@
 # qb-invoices
 # Info
-made by SquizyEliran#8023
+**made by SquizyEliran#8023**
 I have created this code to replace the qb-phone invoices system
 I wanted to create a server but it didn't go like I wanted so I give my code for free
 this code is little old so I hope all is good and don't have any problems
