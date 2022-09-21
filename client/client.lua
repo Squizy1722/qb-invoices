@@ -1,6 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-local verifyjobs = {
+local verifyjobs = { -- here you can change the jobs or add/remove
     'police',
     'mechanic',
     'cardealer',
