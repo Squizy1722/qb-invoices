@@ -1,4 +1,5 @@
 # qb-invoices
+# If someone need help just tell me create issue or something
 # Info
 **made by SquizyEliran#8023**
 I have created this code to replace the qb-phone invoices system
