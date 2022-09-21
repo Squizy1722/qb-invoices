@@ -10,7 +10,7 @@ this code is little old so I hope all is good and don't have any problems
 you need to have **[qb-menu](https://github.com/qbcore-framework/qb-menu)**
 # Images
 
-- **This menu is only for specific jobs(the jobs can be change in config.lua**
+- **This menu is only for specific jobs (the jobs can be change in config.lua**
 
 ![menu](https://i.gyazo.com/60a84ccc9053bc25a90432662bda25a9.png)
 
@@ -18,6 +18,6 @@ you need to have **[qb-menu](https://github.com/qbcore-framework/qb-menu)**
 
 ![menu2](https://i.gyazo.com/ca4485d5251f8802efeb63c6cda50e06.png)
 
-- **pay your invoice with clicking on it(all jobs can see this menu)**
+- **pay your invoice with clicking on it (all jobs can see this menu)**
 
 ![menu3](https://i.gyazo.com/872d5714262988a55641d81c62bc846a.png)
