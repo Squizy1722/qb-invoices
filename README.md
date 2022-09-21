@@ -10,7 +10,7 @@ this code is little old so I hope all is good and don't have any problems
 you need to have **[qb-menu](https://github.com/qbcore-framework/qb-menu)**
 # Images
 
-- **This menu is only for specific jobs (the jobs can be change in config.lua**
+- **This menu is only for specific jobs (the jobs can be change in config.lua)**
 
 ![menu](https://i.gyazo.com/60a84ccc9053bc25a90432662bda25a9.png)
 
