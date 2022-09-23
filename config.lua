@@ -6,3 +6,4 @@ Config.verifyjobs = {
     'cardealer',
 }
 
+Config.phone = false -- if true you need to have phone to get into the menu
