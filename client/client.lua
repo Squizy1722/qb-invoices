@@ -12,6 +12,15 @@ AddEventHandler('QBCore:Client:OnJobUpdate', function(JobInfo)
     PlayerJob = JobInfo
 end)
 
+AddEventHandler('onResourceStart', function(resourceName)
+    if GetCurrentResourceName() ~= resourceName then return end
+    Wait(150)
+    QBCore.Functions.GetPlayerData(function(PlayerData)
+        PlayerJob = PlayerData.job
+    end)
+end)
+
+
 local function IsJobVerify(JobName)
     local retval = false
     for _, name in pairs(Config.verifyjobs) do
