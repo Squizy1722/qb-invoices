@@ -60,9 +60,22 @@ end)
 
 QBCore.Commands.Add('invoices', 'Check Your Invoices', {}, false, function(source, _)
 	local Player = QBCore.Functions.GetPlayer(source)
+	local HasPhone = Player.Functions.GetItemByName("phone")
+	if Config.phone then
+	if HasPhone ~= nil then
 	if not IsJobVerify(Player.PlayerData.job.name) then
 		TriggerClientEvent('qb-billing:client:checkFines',source)
 	else
 		TriggerClientEvent('qb-billing:client:checkFinesForPolice',source)
 	end
+else
+	TriggerClientEvent('QBCore:Notify', source, "you don't have phone", 'error')
+end
+else
+	if not IsJobVerify(Player.PlayerData.job.name) then
+		TriggerClientEvent('qb-billing:client:checkFines',source)
+	else
+		TriggerClientEvent('qb-billing:client:checkFinesForPolice',source)
+	end	
+end
 end)
