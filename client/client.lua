@@ -157,6 +157,7 @@ RegisterNetEvent('qb-billing:client:dialog', function()
         }
 })
 
+if dialog == nil then return end
 if dialog == "" then return QBCore.Functions.Notify("you didn't write anything", 'error') end
 if dialog.playerid == "" then return QBCore.Functions.Notify("you didn't write the player id", 'error') end
 if dialog.billprice == "" then return QBCore.Functions.Notify("you didn't write the bill price", 'error') end
