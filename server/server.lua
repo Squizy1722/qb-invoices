@@ -26,8 +26,11 @@ end)
 RegisterNetEvent('billing:server:payinvoice', function(data)
 	local src = source
     local Player = QBCore.Functions.GetPlayer(src)
+	local result = exports.oxmysql:executeSync('SELECT * FROM management_funds WHERE job_name = ?', {data.society})
+	if Config.management then
 	if Player.PlayerData.money.bank >= data.amount then
 	Player.Functions.RemoveMoney("bank", data.amount, "police-invoice-pay")
+	exports.oxmysql:update('UPDATE management_funds SET amount = ? WHERE job_name = ?',{result[1].amount + data.amount,data.society})
 	exports.oxmysql:execute('DELETE FROM phone_invoices WHERE id = ?', {data.invoiceid})
 	TriggerClientEvent('QBCore:Notify', source, 'Invoice have been paid for '..data.amount..'$', 'success')
 	TriggerClientEvent('qb-billing:client:checkFines',source)
@@ -35,6 +38,17 @@ RegisterNetEvent('billing:server:payinvoice', function(data)
 		TriggerClientEvent('QBCore:Notify', source, 'You not have enough money', 'error')
 		TriggerClientEvent('qb-billing:client:checkFines',source)
 	end
+else
+	if Player.PlayerData.money.bank >= data.amount then
+		Player.Functions.RemoveMoney("bank", data.amount, "police-invoice-pay")
+		exports.oxmysql:execute('DELETE FROM phone_invoices WHERE id = ?', {data.invoiceid})
+		TriggerClientEvent('QBCore:Notify', source, 'Invoice have been paid for '..data.amount..'$', 'success')
+		TriggerClientEvent('qb-billing:client:checkFines',source)
+		else
+			TriggerClientEvent('QBCore:Notify', source, 'You not have enough money', 'error')
+			TriggerClientEvent('qb-billing:client:checkFines',source)
+		end
+end
 end)
 
 RegisterNetEvent('billing:server:addinvoice', function(playerid,amount)
