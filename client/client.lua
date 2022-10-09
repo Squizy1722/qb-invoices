@@ -102,7 +102,7 @@ RegisterNetEvent('qb-billing:client:checkFines', function()
                     header = 'Amount: ' .. v.amount .. '$',
                     icon = 'fas fa-dollar-sign',
                     txt = 'Sender: ' .. v.sender .. ' | Society: ' .. v.society,
-                    params = { event = 'qb-billing:client:payinvoice', args = {sender = v.sender, amount = v.amount, invoiceid = v.id,} } --You can trigger to go back in main menu
+                    params = { event = 'qb-billing:client:payinvoice', args = {sender = v.sender, amount = v.amount, invoiceid = v.id, society = v.society,} } --You can trigger to go back in main menu
                 }
             end
 
